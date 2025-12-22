@@ -22,17 +22,17 @@ Built with a modern tech stack, the application follows a robust architecture wi
 
 ## Features
 
-- 🔐 **Secure Authentication**: JWT-based authentication system with protected routes
-- 💰 **Budget Management**: Create and manage multiple budgets with category-based spending limits
-- 📊 **Expense Tracking**: Record, categorize, and track expenses with historical data
-- 📈 **Financial Analytics**: 
+- **Secure Authentication**: JWT-based authentication system with protected routes
+- **Budget Management**: Create and manage multiple budgets with category-based spending limits
+- **Expense Tracking**: Record, categorize, and track expenses with historical data
+- **Financial Analytics**: 
   - Real-time dashboard with total budget, expenses, and remaining balance
   - Month-over-month expense comparison with percentage change
   - Category-wise expense breakdown with percentage distribution
   - Budget overflow alerts and visual indicators
-- 🎨 **Modern UI**: Responsive design with Tailwind CSS and Shadcn/ui components
-- 🔄 **Real-time Updates**: Seamless data synchronization and user experience
-- 📱 **Mobile Responsive**: Fully responsive design that works across all devices
+- **Modern UI**: Responsive design with Tailwind CSS and Shadcn/ui components
+- **Real-time Updates**: Seamless data synchronization and user experience
+- **Mobile Responsive**: Fully responsive design that works across all devices
 
 ---
 
