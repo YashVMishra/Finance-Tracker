@@ -35,7 +35,7 @@ public class JwtTokenProvider {
     Date expiryDate = new Date(now.getTime() + jwtExpirationMs);
 
     return Jwts.builder()
-      .setSubject(userPrincipal.getUsername()) // ✅ changed from `.subject(...)`
+      .setSubject(userPrincipal.getUsername()) // The email becomes the identity inside the token.
       .setIssuedAt(now)
       .setExpiration(expiryDate)
       .signWith(key(), SignatureAlgorithm.HS512)
@@ -56,16 +56,18 @@ public class JwtTokenProvider {
 
   public String getEmailFromJWT(String token) {
     Claims claims = Jwts.parserBuilder()
-      .setSigningKey(key()) // ✅ changed from `.verifyWith(...)`
+      .setSigningKey(key())
       .build()
-      .parseClaimsJws(token) // ✅ changed from `.parseSignedClaims(...)`
+      .parseClaimsJws(token)
       .getBody();
 
-    return claims.getSubject();
+    return claims.getSubject(); // Subject = email you put during login.
   }
 
   public boolean validateToken(String authToken) {
     try {
+      // breaking line - parseClaimsJws(authToken);
+      // This checks: signature, expiry and token integrity
       Jwts.parserBuilder().setSigningKey(key()).build().parseClaimsJws(authToken);
       return true;
     } catch (MalformedJwtException ex) {

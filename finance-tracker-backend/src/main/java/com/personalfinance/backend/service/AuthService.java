@@ -41,6 +41,13 @@ public class AuthService {
 
   // authenticating the user and sending the jwt token
   public JwtAuthResponse authenticateUser(LoginRequest loginRequest){
+
+    // What happens internally:
+    // Calls CustomUserDetailsService.loadUserByUsername(email)
+    // Fetches user from DB
+    // Compares hashed password using PasswordEncoder
+    // If wrong → exception
+    // If correct → returns Authentication
     Authentication authentication = authenticationManager.authenticate(
       new UsernamePasswordAuthenticationToken(
         loginRequest.getEmail(),
