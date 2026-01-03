@@ -51,7 +51,7 @@ public class SecurityConfig {
   @Bean
   public CorsConfigurationSource corsConfigurationSource() {
     CorsConfiguration configuration = new CorsConfiguration();
-    configuration.setAllowedOrigins(List.of("http://localhost:3000")); // Adjust for your frontend URL
+    configuration.setAllowedOrigins(List.of("https://finance-tracker-frontend-mu-self.vercel.app")); // Adjust for your frontend URL
     configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS", "PATCH"));
     configuration.setAllowedHeaders(Arrays.asList("Authorization", "Cache-Control", "Content-Type", "X-Requested-With"));
     configuration.setAllowCredentials(true); // Important for cookies, authorization headers with HTTPS
